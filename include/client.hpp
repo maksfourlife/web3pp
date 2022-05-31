@@ -2,13 +2,16 @@
 #include <string>
 #include "provider.hpp"
 
-class Client
+namespace web3
 {
-private:
-    Provider *provider;
+    class Client
+    {
+    private:
+        Provider *provider;
 
-public:
-    Client(const std::string &rawurl);
-    Client(Provider *provider);
-    uint64_t blockNumber();
-};
+    public:
+        Client(const std::string &rawurl);
+        Client(Provider *provider);
+        uint64_t blockNumber();
+    };
+}
