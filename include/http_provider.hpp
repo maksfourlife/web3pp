@@ -2,6 +2,7 @@
 #include "provider.hpp"
 #include "httplib.h"
 #include "nlohmann/json.hpp"
+#include <iostream>
 
 namespace web3
 {
@@ -13,10 +14,11 @@ namespace web3
         {
             nlohmann::json j;
             j["jsonrpc"] = "2.0";
+            j["id"] = 1;
             j["method"] = method;
             j["params"] = params;
             auto raw = j.dump();
-            auto res = this->Post("", raw.c_str(), raw.length(), "application/json");
+            auto res = this->Post("/", raw.c_str(), raw.length(), "application/json");
             return res->body;
         }
     };

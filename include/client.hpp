@@ -13,5 +13,7 @@ namespace web3
         Client(const std::string &rawurl);
         Client(Provider *provider);
         uint64_t blockNumber();
+        uint64_t chainId();
+        uint64_t gasPrice();
     };
 }

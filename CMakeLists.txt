@@ -10,6 +10,7 @@ include_directories(include)
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/client.cpp
+    src/utils.cpp
     include/client.hpp
     include/provider.hpp
 )
